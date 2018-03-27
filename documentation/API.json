@@ -1,0 +1,103 @@
+[
+  {
+    "description": {
+      "type": "root",
+      "children": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "type": "text",
+              "value": "Either adds the passed object to this spawns queue, or returns the entire queue",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 80,
+                  "offset": 79
+                },
+                "indent": []
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 80,
+              "offset": 79
+            },
+            "indent": []
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 80,
+          "offset": 79
+        }
+      }
+    },
+    "tags": [],
+    "loc": {
+      "start": {
+        "line": 2,
+        "column": 0
+      },
+      "end": {
+        "line": 4,
+        "column": 3
+      }
+    },
+    "context": {
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 34,
+          "column": 2
+        }
+      },
+      "file": "/Users/tim/Library/Application Support/Screeps/scripts/127_0_0_1___21025/source/prototypes/proto_StructureSpawn.js"
+    },
+    "name": "queue",
+    "kind": "function",
+    "params": [
+      {
+        "title": "param",
+        "name": "pSpawnOrderObject",
+        "default": "false"
+      }
+    ],
+    "memberof": "StructureSpawn",
+    "scope": "instance",
+    "members": {
+      "instance": [],
+      "static": []
+    },
+    "path": [
+      {
+        "name": "queue",
+        "kind": "function",
+        "scope": "instance"
+      }
+    ],
+    "namespace": "#queue"
+  }
+]

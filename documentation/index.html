@@ -1,0 +1,1605 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Screeps 1.0.0 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='max-width-4 mx-auto'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>Screeps</h3>
+          <div class='mb1'><code>1.0.0</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#spawnorderconstructor'
+                  class="">
+                  SpawnOrder.constructor
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#spawnordergetbody'
+                  class="">
+                  SpawnOrder.getBody
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#spawnordergetcost'
+                  class="">
+                  SpawnOrder.getCost
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#spawnordergetmemory'
+                  class="">
+                  SpawnOrder.getMemory
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#spawnordertojson'
+                  class="">
+                  SpawnOrder.toJson
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#managerspawnmanagespawnstatic'
+                  class="">
+                  ManagerSpawn.manageSpawn.STATIC
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#managerspawnqueueworkersstatic'
+                  class="">
+                  ManagerSpawn.queueWorkers.STATIC
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#managerspawnqueuegatherersstatic'
+                  class="">
+                  ManagerSpawn.queueGatherers.STATIC
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#managerspawnqueueassistantsstatic'
+                  class="">
+                  ManagerSpawn.queueAssistants.STATIC
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#managerspawnqueueclaimersstatic'
+                  class="">
+                  ManagerSpawn.queueClaimers.STATIC
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#managerspawnqueuemilitarystatic'
+                  class="">
+                  ManagerSpawn.queueMilitary.STATIC
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototypeworkclass'
+                  class="">
+                  Creep.prototype.workClass
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototypebuildlevel'
+                  class="">
+                  Creep.prototype.buildLevel
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototypespawnroom'
+                  class="">
+                  Creep.prototype.spawnRoom
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototypehomeroom'
+                  class="">
+                  Creep.prototype.homeRoom
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototyperole'
+                  class="">
+                  Creep.prototype.role
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototyperespawntimebuffer'
+                  class="">
+                  Creep.prototype.respawnTimeBuffer
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototypeisfull'
+                  class="">
+                  Creep.prototype.isFull
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#creepprototypemovetopos'
+                  class="">
+                  Creep.prototype.moveToPos
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#structurespawnprototypequeue'
+                  class="">
+                  StructureSpawn.prototype.queue
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#structurespawnprototyperesetqueue'
+                  class="">
+                  StructureSpawn.prototype.resetQueue
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#structurespawnprototypequeuesummary'
+                  class="">
+                  StructureSpawn.prototype.queueSummary
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#structurespawnprototypeoperate'
+                  class="">
+                  StructureSpawn.prototype.operate
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='spawnorderconstructor'>
+      SpawnOrder.constructor
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>SpawnOrder.constructor</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pSpawnRoom</span> <code class='quiet'>(any)</code>
+	    string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pHomeRoom</span> <code class='quiet'>(any)</code>
+	    string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pWorkClass</span> <code class='quiet'>(any)</code>
+	    string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pRole</span> <code class='quiet'>(any)</code>
+	    string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pBuildLevel</span> <code class='quiet'>(any)</code>
+	    number
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pBoosts</span> <code class='quiet'>(any)</code>
+	    Array
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pPriority</span> <code class='quiet'>(any)</code>
+	    string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pName</span> <code class='quiet'>(any)</code>
+	    [
+String = undefined
+]
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='spawnordergetbody'>
+      SpawnOrder.getBody
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>gets the body part array for the spawn order from the settings</p>
+
+
+  <div class='pre p1 fill-light mt0'>SpawnOrder.getBody</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='spawnordergetcost'>
+      SpawnOrder.getCost
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>gets the energy cost for the spawn order from the settings</p>
+
+
+  <div class='pre p1 fill-light mt0'>SpawnOrder.getCost</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='spawnordergetmemory'>
+      SpawnOrder.getMemory
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>compiles the memory object needed for spaning the order</p>
+
+
+  <div class='pre p1 fill-light mt0'>SpawnOrder.getMemory</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='spawnordertojson'>
+      SpawnOrder.toJson
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>returns a json - memory storable object to be stored in a spawns queue in memory</p>
+
+
+  <div class='pre p1 fill-light mt0'>SpawnOrder.toJson</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='managerspawnmanagespawnstatic'>
+      ManagerSpawn.manageSpawn.STATIC
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Queues the various work class of creeps needed on a relevant spawn and Operates each spawn.</p>
+
+
+  <div class='pre p1 fill-light mt0'>ManagerSpawn.manageSpawn.STATIC</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='managerspawnqueueworkersstatic'>
+      ManagerSpawn.queueWorkers.STATIC
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>(periodically) checks each rooms number of worker creeps vs its config.room
+spawnGoals and if there is a need queues more workers in the rooms spawn queues</p>
+
+
+  <div class='pre p1 fill-light mt0'>ManagerSpawn.queueWorkers.STATIC</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='managerspawnqueuegatherersstatic'>
+      ManagerSpawn.queueGatherers.STATIC
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>(periodically) checks the gathering room config file for gathering room
+spawnGoals and if there is a need queues more gatherers in the provider spawn queues</p>
+
+
+  <div class='pre p1 fill-light mt0'>ManagerSpawn.queueGatherers.STATIC</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='managerspawnqueueassistantsstatic'>
+      ManagerSpawn.queueAssistants.STATIC
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>(periodically) checks the assistant config file for assistant
+spawnGoals and if there is a need queues more assistant in the provider spawn queues</p>
+
+
+  <div class='pre p1 fill-light mt0'>ManagerSpawn.queueAssistants.STATIC</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='managerspawnqueueclaimersstatic'>
+      ManagerSpawn.queueClaimers.STATIC
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>(periodically) checks the claimer config file for and claimers needed
+and if there is a need queues a claimer in the provider spawn queues</p>
+
+
+  <div class='pre p1 fill-light mt0'>ManagerSpawn.queueClaimers.STATIC</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='managerspawnqueuemilitarystatic'>
+      ManagerSpawn.queueMilitary.STATIC
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>(periodically) checks the military config file for any soldier creeps needed
+and if there is a need queues soldier creeps in the provider spawn queues</p>
+
+
+  <div class='pre p1 fill-light mt0'>ManagerSpawn.queueMilitary.STATIC</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototypeworkclass'>
+      Creep.prototype.workClass
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>returns the creeps work class as stored in memory</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.workClass</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototypebuildlevel'>
+      Creep.prototype.buildLevel
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>returns the creeps build level as stored in memory</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.buildLevel</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototypespawnroom'>
+      Creep.prototype.spawnRoom
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>returns the name of the room in which the creep was spawned</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.spawnRoom</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototypehomeroom'>
+      Creep.prototype.homeRoom
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>either returns the name of the room the creep is assigned to work in
+OR if a new room name is passed as parameter, changes the homeRoom in memory and returns nothing.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.homeRoom</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pNewRoomName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?
+            = <code>false</code>)</code>
+	    name of room to assign as creeps new home room
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | none)</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototyperole'>
+      Creep.prototype.role
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>either returns the creeps role setting from its memory,
+OR if new role is passed as parameter sets that as the creeps new role.</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.role</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pNewRole</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | none)?
+            = <code>false</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | none)</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototyperespawntimebuffer'>
+      Creep.prototype.respawnTimeBuffer
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>either returns the respawn time buffer setting from creeps memory
+OR if new buffer passed as parameter, changes creeps setting to this number.
+(the number represents the number of ticks time to live that a creeps replacement will
+be queued for spawn.)</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.respawnTimeBuffer</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pNewBuffer</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?
+            = <code>false</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a> | none)</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototypeisfull'>
+      Creep.prototype.isFull
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>either returns the current full state of the creep from memory
+OR if new state passed as parameter it sets creeps full state to that</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.isFull</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pState</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>?
+            = <code>&#39;none&#39;</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a> | none)</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='creepprototypemovetopos'>
+      Creep.prototype.moveToPos
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>this is a wrapper for the moveto function
+for now it doesn't do much, but leaves open the possibility of
+caching paths in future if needed for CPU use optimisation</p>
+
+
+  <div class='pre p1 fill-light mt0'>Creep.prototype.moveToPos</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pPos</span> <code class='quiet'>(RoomPosition)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='structurespawnprototypequeue'>
+      StructureSpawn.prototype.queue
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Either adds the passed spawn object to the queue for this spawn, OR
+if no parameter passed returns the existing queue.</p>
+
+
+  <div class='pre p1 fill-light mt0'>StructureSpawn.prototype.queue</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>pSpawnOrder</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>[SpawnOrder]</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='structurespawnprototyperesetqueue'>
+      StructureSpawn.prototype.resetQueue
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Resets the spawn queue of the spawn to empty</p>
+
+
+  <div class='pre p1 fill-light mt0'>StructureSpawn.prototype.resetQueue</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='structurespawnprototypequeuesummary'>
+      StructureSpawn.prototype.queueSummary
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>returns a summary of the spawn orders queued on the spawn
+format is e.g summary.homeroom.worklcass.role = 1</p>
+
+
+  <div class='pre p1 fill-light mt0'>StructureSpawn.prototype.queueSummary</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        [
+{SpawnOrder}
+]
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='structurespawnprototypeoperate'>
+      StructureSpawn.prototype.operate
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>checks if spawn is busy, and if not checks if there is any orders queued
+and if the spawn is capable of spawnging them. if so the order is spawned and
+the order is removed from the queue.</p>
+
+
+  <div class='pre p1 fill-light mt0'>StructureSpawn.prototype.operate</div>
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
