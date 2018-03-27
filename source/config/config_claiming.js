@@ -3,7 +3,7 @@
 
 function updateClaimingSettings()
 {
-	const vMem = {};
+	let vMem = {};
 
 	vMem.W62S58 = {
 			isActiveOp: false,
